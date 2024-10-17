@@ -1,0 +1,16 @@
+services:
+  productsservice:
+    image: ${DOCKER_REGISTRY-}productsservice
+    build:
+      context: ./ProductsService
+      dockerfile: Dockerfile
+    ports:
+      - "8001:80"
+
+  ordersservice:
+    image: ${DOCKER_REGISTRY-}ordersservice
+    build:
+      context: ./OrdersService
+      dockerfile: Dockerfile
+    ports:
+      - "8002:80"
